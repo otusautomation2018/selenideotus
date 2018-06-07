@@ -2,7 +2,7 @@ package google.com.tests;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
-import data.CommonSiteData;
+import data.CommonSitesData;
 import org.openqa.selenium.By;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -32,7 +32,7 @@ public class GoogleComTest {
         $("div[id='res']").should(Condition.visible);
         $$x("//div[@class='g']").shouldHaveSize(RESULTS_NUMBERS);
         $$x("//div[@class='g']")
-                .get(CommonSiteData.FIRST_ENTITY_IN_RESULT_LIST)
+                .get(CommonSitesData.FIRST_ENTITY_IN_RESULT_LIST)
                 .should(Condition.matchesText(QUERY));
     }
 }
